@@ -1,0 +1,22 @@
+{
+  "name": "nodeexpress",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kdhyun23/NodeExpress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kdhyun23/NodeExpress/issues"
+  },
+  "homepage": "https://github.com/Kdhyun23/NodeExpress#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
