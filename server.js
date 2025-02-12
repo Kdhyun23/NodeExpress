@@ -6,5 +6,5 @@ app.listen(8080, function(){
 });
 
 app.get('/test', function(req, res){
-    res.send('Hello World');
+    res.send('npm run watch');
 });
