@@ -1,10 +1,17 @@
-const express = require('express');
-const app = express();
-
-app.listen(8080, function(){
-    console.log('Server is running on port 8080');
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '5888',
+    database: 'dbtest'
 });
 
-app.get('/test', function(req, res){
-    res.send('npm run watch');
+connection.connect();
+
+connection.query('SELECT * FROM userinfo', (error, results) => {
+    if (error) throw error;
+
+    console.log('userinfo table: ', results);
 });
+
+connection.end();
