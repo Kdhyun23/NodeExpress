@@ -15,17 +15,7 @@ app.listen(8080, function(){
 });
 
 app.get('/index', function(req, res){
-    //res.send('npm run nodemon');
     res.sendFile(__dirname + '/src/index.html');
-});
-
-app.get('/select', function(req, res){
-    connection.connect();
-    connection.query('SELECT * FROM userinfo', (error, results) => {
-        if (error) throw error;
-        res.send(results);
-    });
-    connection.end();
 });
 
 connection.connect();
