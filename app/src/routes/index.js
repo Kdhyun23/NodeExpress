@@ -1,5 +1,3 @@
-const express = require('express');
-const app = express();
 const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -8,21 +6,18 @@ const connection = mysql.createConnection({
     database: 'dbtest'
 });
 
-app.use(express.static('public'));
-
-app.listen(8080, function(){
-    console.log('Server is running on port 8080');
-});
-
-app.get('/index', function(req, res){
-    res.sendFile(__dirname + '/src/index.html');
-});
-
 connection.connect();
 connection.query('SELECT * FROM userinfo', (error, results) => {
     if (error) throw error;
-
     console.log('userinfo table: ', results);
 });
 
 connection.end();
+
+const express = require('express');
+const router = express.Router();
+const controller = require('./controller/login_controller');
+
+router.get('/login', controller.login);
+
+module.exports = router;
