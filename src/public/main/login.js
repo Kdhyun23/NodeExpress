@@ -5,7 +5,7 @@ const button = document.querySelector('#button');
 
 button.addEventListener('click', () => {
     if (email.value === '' || password.value === '') {
-        alert('Please enter your ID and password.');
+        alert('이메일 또는 비밀번호를 입력해주세요.');
         return;
     }
 
@@ -26,11 +26,17 @@ button.addEventListener('click', () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(req)
-    }).then(res => {
-        if (res.success) {
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            console.log(data.user);
             alert('로그인 성공');
         } else {
-            alert(res.msg);
+            alert(data.message);
         }
     })
+    .catch(error => {
+        console.error("로그인 요청 중 오류 발생:", error);
+    });
 });
