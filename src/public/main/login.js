@@ -2,6 +2,12 @@ const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const checkbox = document.querySelector('#checkbox');
 const button = document.querySelector('#button');
+const member = document.querySelector('#member');
+
+member.addEventListener('click', () => {
+    //alert('회원가입 페이지로 이동합니다.');
+    document.querySelector('#modal').style.display = "block";
+});
 
 button.addEventListener('click', () => {
     if (email.value === '' || password.value === '') {
