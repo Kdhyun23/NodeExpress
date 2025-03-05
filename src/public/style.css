@@ -72,8 +72,31 @@ h2{
     background-color: #0056b3;
 }
 
+.checkbox:hover {
+    cursor: pointer;
+}
+
+#member {
+    color: white;
+    text-decoration: none;
+}
+
+#member:visited {
+    color: white;
+}
+
+#member:hover {
+    color: rgb(200, 200, 200);
+}
+
+#member:active {
+    color: gray;
+}
+
 .modal {
     display: none;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -85,10 +108,10 @@ h2{
 
 .modal-container {
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
+    margin: auto;
     border: 1px solid #888;
-    width: 400px;
+    width: 800px;
+    height: 500px;
     text-align: center;
 }
 
