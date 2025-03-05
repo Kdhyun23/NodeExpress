@@ -6,7 +6,7 @@ const member = document.querySelector('#member');
 
 member.addEventListener('click', () => {
     //alert('회원가입 페이지로 이동합니다.');
-    document.querySelector('#modal').style.display = "block";
+    document.querySelector('#modal').style.display = "flex";
 });
 
 button.addEventListener('click', () => {
