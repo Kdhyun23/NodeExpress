@@ -93,6 +93,7 @@ h2{
     color: gray;
 }
 
+/* 전체 모달 스타일 */
 .modal {
     display: none;
     justify-content: center;
@@ -103,17 +104,86 @@ h2{
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
 }
 
+/* 모달 컨테이너 스타일 */
 .modal-container {
-    background-color: #fefefe;
+    background-color: #ffffff;
     margin: auto;
-    border: 1px solid #888;
-    width: 800px;
-    height: 500px;
+    border-radius: 10px;
+    padding: 30px;
+    width: 400px;
+    height: auto;
     text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* 제목 스타일 */
+.modal-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 폼 입력란 스타일 */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+/* 입력란 포커스 시 스타일 */
+.input-group input:focus {
+    border-color: #5b9bd5;
+}
+
+/* 버튼 컨테이너 스타일 */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* 버튼 스타일 */
+.button-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 회원가입 버튼 스타일 */
+#m_submit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#m_submit:hover {
+    background-color: #45a049;
+}
+
+/* 닫기 버튼 스타일 */
+#m_button {
+    background-color: #f44336;
+    color: white;
+}
+
+#m_button:hover {
+    background-color: #e53935;
+}
+
 
 .close {
     color: #aaa;
