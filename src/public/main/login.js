@@ -13,7 +13,10 @@ const m_password_confirm = document.querySelector('#m_password_confirm');
 const m_submit = document.querySelector('#m_submit');
 
 member.addEventListener('click', () => {
-    //alert('회원가입 페이지로 이동합니다.');
+    m_email.value = '';
+    m_name.value = '';  
+    m_password.value = '';
+    m_password_confirm.value = '';
     document.querySelector('#modal').style.display = "flex";
 });
 
