@@ -52,8 +52,7 @@ button.addEventListener('click', () => {
     .then(res => res.json())
     .then(data => {
         if (data.success) {
-            console.log(data.user);
-            alert('로그인 성공');
+            window.location.href = '/winmain';
         } else {
             alert(data.message);
         }

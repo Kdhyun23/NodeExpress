@@ -11,6 +11,9 @@ connection.connect();
 const output = {
     login: (req, res) => {
         res.render('login');
+    },
+    winmain: (req, res) => {
+        res.render('winmain');
     }
 }
 
