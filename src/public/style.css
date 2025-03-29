@@ -44,10 +44,21 @@ h2{
 }
 .login-container .options {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin: 10px 0;
     font-size: 14px;
+}
+.login-container .options a{
+    margin-left: auto;
+    color: white;
+    text-decoration: none;
+    margin-right: 10px; 
+}
+#line{
+    color: white;
+}
+#skip{
+    margin-left: 5px;
 }
 .login-container .options label {
     display: flex;

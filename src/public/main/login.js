@@ -3,6 +3,7 @@ const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const checkbox = document.querySelector('#checkbox');
 const button = document.querySelector('#button');
+const skip = document.querySelector('#skip');
 const member = document.querySelector('#member');
 
 // 회원가입 모달
@@ -53,6 +54,7 @@ button.addEventListener('click', () => {
     .then(data => {
         if (data.success) {
             window.location.href = '/winmain';
+            sessionStorage.setItem('userName', JSON.stringify(data.user.name));
         } else {
             alert(data.message);
         }
@@ -60,6 +62,10 @@ button.addEventListener('click', () => {
     .catch(error => {
         console.error("로그인 요청 중 오류 발생:", error);
     });
+});
+
+skip.addEventListener('click', () => {
+    window.location.href = '/winmain';
 });
 
 // 회원가입 버튼 클릭
