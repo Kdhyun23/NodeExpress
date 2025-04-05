@@ -22,7 +22,8 @@ member.addEventListener('click', () => {
 });
 
 // 로그인 버튼 클릭
-button.addEventListener('click', () => {
+button.addEventListener('click', (event) => {
+    event.preventDefault();
     if (email.value === ''){
         alert('이메일을 입력해주세요.');
         return;
