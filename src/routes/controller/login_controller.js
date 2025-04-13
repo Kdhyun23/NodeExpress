@@ -13,7 +13,10 @@ const output = {
         res.render('login');
     },
     winmain: (req, res) => {
-        res.render('winmain');
+        if (req.session.user) {
+            console.log("세션에 저장된 사용자 정보:", req.session.user);
+            res.render('winmain');
+        }
     }
 }
 
@@ -30,6 +33,11 @@ const process = {
                 return;
             }
             if (results.length > 0) {
+                req.session.user = {
+                    id: results[0].id,
+                    name: results[0].name,
+                    email: results[0].email
+                };
                 res.json({ success: true, message: "로그인 성공", user: results[0] });
             } else {
                 res.status(401).json({ success: false, message: "이메일 또는 비밀번호가 잘못되었습니다." });
