@@ -15,8 +15,8 @@ const output = {
     winmain: (req, res) => {
         if (req.session.user) {
             console.log("세션에 저장된 사용자 정보:", req.session.user);
-            res.render('winmain');
         }
+        res.render('winmain');
     }
 }
 
@@ -42,6 +42,17 @@ const process = {
             } else {
                 res.status(401).json({ success: false, message: "이메일 또는 비밀번호가 잘못되었습니다." });
             }
+        });
+    },
+    logout: (req, res) => {
+        req.session.destroy((err) => {
+            if (err) {
+                console.error("세션 삭제 오류:", err);
+                res.status(500).json({ success: false, message: "로그아웃 실패" });
+                return;
+            }
+            res.clearCookie('connect.sid');
+            res.json({ success: true, message: "로그아웃 성공" });
         });
     },
     member: (req, res) => {
