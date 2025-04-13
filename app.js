@@ -3,6 +3,14 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+const session = require('express-session');
+app.use(session({
+    secret: 'mySecretKey',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false } // HTTPS 사용 시 true로 설정
+}));
+
 // 포트
 const port = 8080;
 
