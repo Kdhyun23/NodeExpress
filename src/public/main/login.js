@@ -5,6 +5,7 @@ const checkbox = document.querySelector('#checkbox');
 const button = document.querySelector('#button');
 const skip = document.querySelector('#skip');
 const member = document.querySelector('#member');
+const logoutBtn = document.getElementById('logout');
 
 // 회원가입 모달
 const m_email = document.querySelector('#m_email');
@@ -67,6 +68,11 @@ button.addEventListener('click', (event) => {
 
 skip.addEventListener('click', () => {
     window.location.href = '/winmain';
+
+    const logoutBtn = document.getElementById('logout');
+    if (logoutBtn) {
+        logoutBtn.textContent = '로그인';
+    }
 });
 
 // 회원가입 버튼 클릭
